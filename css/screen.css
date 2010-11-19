@@ -1,0 +1,13 @@
+body{background:#262626;color:#262626;}
+
+a{color:#234B7B;}
+p,h1,h2,h3,h4,h5,h6,h7{margin:0;padding:0;}
+
+#card{text-align:center; width:1000px;height:760px;margin: 0 auto;}
+
+section{width:500px;height:760px;background:#fff;display:none;}
+section.current{display:block;}
+
+#frontpage{margin-left:500px;}
+
+
