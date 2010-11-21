@@ -9,44 +9,59 @@
     <meta charset="utf-8">
     <title>Merry Christmas to The Telegraph!</title>
     <link href="css/screen.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
   </head>
   <body>
+
+    <div id="preloader">
+			<div class="contents">
+				<canvas class="animation"></canvas>
+				<div class="progress">
+					<div class="fill"></div>
+				</div>
+			</div>
+		</div>
     
     <div id="card">
 
       <section id="frontpage" class="current">
 	
-	<p class="logointro">A special card for...</p>
-	<h1>The Telegraph</h1>
-	
-	<p>Best viewed in Chrome or Safari, on a desktop or iPad.</p>
-	
-	<p>Please open by clicking, swiping, or pressing the right arrow key.</p>
-	
+	      <p class="logointro">A Christmas card for...</p>
+	      <h1>The Telegraph</h1>
+	      
+	      <canvas id="tree" width="300" height="300"></canvas>
+
+        <ul class="instructions">
+	        <li>Best in Chrome or Safari on a desktop, or on an iPad</li>
+	      
+	        <li>Please open by clicking, swiping, or pressing <span class="arrow">→</span></li>
+        </ul>
+	      
       </section>
       
       <section id="firstinnerpage">
       </section>
       
       <section id="secondinnerpage">
-	
-	<p>Dear Telegraph colleagues,</p>
-	
-	<h3>Wishing you a very merry Christmas and a joyful New Year</h3>
-	
-	<canvas id="tree"></canvas>
-	
-	<!-- TODO music and controls -->
-	
-	<p>From <span class="signature">Peter O'Shaughnessy</span></p>
-	
-	<footer>
-	  <p>Brought to you using pure HTML5, CSS3 and JavaScript.</p>
-	  <p>No images were used in the creation of this card (not even The Telegraph logo).</p>
-	  <p>This card uses offline caching, so you can come back to it later even with no Internet connection.</p>
-	</footer>
-	
+	      
+	      <p>Dear Telegraph colleagues,</p>
+	      
+	      <h3>Wishing you a very merry Christmas and a joyful New Year</h3>
+	      
+        <!-- Another canvas? -->
+	      
+	      <!-- TODO music and controls -->
+	      
+	      <p>From <span class="signature">Peter O'Shaughnessy</span></p>
+	      
+	      <footer>
+	        <p>Brought to you using pure HTML5, CSS3 and JavaScript.</p>
+	        <p>No images were used in the creation of this card (not even The Telegraph logo).</p>
+	        <p>This card uses offline caching, so you can come back to it later even with no Internet connection.</p>
+	      </footer>
+	      
       </section>
 
     </div>
