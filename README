@@ -1,2 +1,16 @@
 Christmas Card for my Telegraph colleagues 2010
 
+By Peter O'Shaughnessy
+
+---
+
+This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic, but I may as well use GAE as it's easy and free!
+
+To run:
+
+  dev_appserver.py christmascard2010/
+
+To deploy:
+
+  appcfg.py update christmascard2010/
+

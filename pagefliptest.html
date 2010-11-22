@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<title>Pure CSS3 Page Flip Effect</title> 
+	<title>Merry Christmas</title> 
 	<style type="text/css"> 
 		body
 		{
@@ -19,12 +19,12 @@
 		#page-flip
 		{
 			position: absolute;
-			padding: 0 0 50px 485px;
+			padding: 10px 0 50px 485px;
 			width: 500px;
 			height: 667px;
 			overflow: hidden;
 		}
-		#r1
+		#rotation1
 		{
 			position: absolute;
 			z-index: 2;
@@ -56,7 +56,7 @@
 			-webkit-transition-duration: 1s;
 			width: 475px;
 			height: 647px;
-      background-color: #00ffff;
+      background-color: #fff;
 		}
 		#page1 > div > div
 		{
@@ -65,16 +65,16 @@
 			background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .25)), to(rgba(0,0,0,0)));
 		}
  
-		#page2 > div
+		#page3 > div
 		{
 			width: 475px;
 			height: 647px;
 			-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, .5);
 			position: absolute;
 			z-index: 1;
-      background-color: #ff00ff;
+      background-color: #fff;
 		}
-		#r3
+		#rotation2
 		{
 			-webkit-transform-origin: 1315px 500px;
 			/*-webkit-transform: translate(-1030px, -500px) rotate(-32deg);*/
@@ -87,7 +87,7 @@
 			z-index: 2;
 		}
  
-		#s3
+		#cornerToSpine1
 		{
 			-webkit-transform-origin: 70px 500px;
 			/*-webkit-transform: translate(215px, -500px) rotate(-32deg) translate(40px, 0);*/
@@ -98,7 +98,7 @@
 			position: absolute;
 			z-index: 1;
 		}
-		#spine3
+		#cornerToSpine2
 		{
 			width: 25px;
 			height: 1146px;
@@ -107,7 +107,7 @@
 			-webkit-transition-duration: 1s;
 			overflow: hidden;
 		}
-		.s
+		.cornerToSpine
 		{
 			width: 475px;
 			height: 647px;
@@ -115,35 +115,13 @@
 			overflow: hidden;
 			z-index: 3;
 		}
-		#s2
-		{
-			-webkit-transform-origin: 45px 500px;
-			/*-webkit-transform: translate(240px, -500px) rotate(-32deg);*/
-      /*-webkit-transform: translate(431px, -500px) rotate(-32deg);*/
-      -webkit-transform: translate(431px, -500px) rotate(-40deg);
-			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
-			-webkit-transition-duration: 1s;
-			position: absolute;
-		}
-		#spine2
-		{
-			width: 15px;
-			height: 1000px;
-			background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, .18)), to(rgba(0,0,0,0)));
-			overflow: hidden;
-		}
-		#s4
-		{
-			opacity: 1;
-			-webkit-transition-duration: 0.5s;
-		}
-		#page3
+		#page2
 		{
 			width: 1285px;
 			height: 1388px;
 			overflow: hidden;
 		}
-		#page3 > div
+		#page2 > div
 		{
 			-webkit-transform-origin: 0 0;
 			/*-webkit-transform: translate(1255px, 500px) rotate(-32deg);*/
@@ -155,9 +133,9 @@
 			width: 475px;
 			height: 647px;
 			overflow: hidden;
-      background-color: #ff0000;
+      background-color: #fff;
 		}
-		#page3 > div > div
+		#page2 > div > div
 		{
 			width: 9px;
 			height: 648px;
@@ -186,7 +164,7 @@
 		{
 			width: 11px;
 		}
-		#page-flip:hover #r1
+		#page-flip:hover #rotation1
 		{
       -webkit-transform-origin: 1570px 1010px;
       -webkit-transform: translate(-1285px, -500px) rotate(0deg);
@@ -196,12 +174,12 @@
 			-webkit-transform-origin: 285px 0;
 			-webkit-transform: translate(1285px, 500px) rotate(0deg);
 		}
-		#page-flip:hover #r3
+		#page-flip:hover #rotation2
 		{
 			-webkit-transform-origin: 1570px 500px;
 			-webkit-transform: translate(-1285px, -500px) rotate(0deg);
 		}
-		#page-flip:hover #page3 > div
+		#page-flip:hover #page2 > div
 		{
 			-webkit-transform-origin: 0 0;
       -webkit-transform: translate(810px, 500px) rotate(0deg);
@@ -209,20 +187,32 @@
     */
 
     #page-flip {cursor:pointer;}
+
+		@-webkit-keyframes page2Animation {
+
+		  50% {translate(1000px, 600px) rotate(20deg);}
+		  100% {translate(810px, 500px) rotate(0deg);}
+
+		}
+
 	</style> 
   <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
   <script type="text/javascript">
 
     function openCard() {
 
-        $('#r1').css('-webkit-transform-origin', '1570px 1010px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
+        $('#rotation1').css('-webkit-transform-origin', '1570px 1010px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
+        $('#rotation2').css('-webkit-transform-origin', '1570px 500px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
+
         $('#page1 > div').css('-webkit-transform-origin', '285px 0').css('-webkit-transform','translate(1285px, 500px) rotate(0deg)');
-        $('#r3').css('-webkit-transform-origin', '1570px 500px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
-        $('#page3 > div').css('-webkit-transform-origin', '0 0').css('-webkit-transform', 'translate(810px, 500px) rotate(0deg)');
-        $('#s3').css('-webkit-transform-origin', '325px 500px').css('-webkit-transform', 'translate(-40px, -500px) rotate(0deg) translate(40px, 0)');
-        $('#spine3').css('width', '11px');
-        $('#s4').css('opacity', '0');
-        $('#s2').css('-webkit-transform-origin', '300px 500px').css('-webkit-transform', 'translate(-15px, -500px) rotate(0deg)');
+        $('#page2 > div').css('-webkit-transform-origin', '0 0').css('-webkit-transform', 'translate(810px, 500px) rotate(0deg)');
+
+        /* css('-webkit-animation', 'page2Animation 1s infinite'); */
+
+        window.setTimeout(function() {$('#page3 > div').css('z-index','2');}, 500);
+
+        $('#cornerToSpine1').css('-webkit-transform-origin', '325px 500px').css('-webkit-transform', 'translate(-40px, -500px) rotate(0deg) translate(40px, 0)');
+        $('#cornerToSpine2').css('width', '11px');
 
         $('#page-flip').data('open','true');
 
@@ -230,14 +220,15 @@
 
     function closeCard() {
 
-        $('#r1').removeAttr('style');
+        $('#rotation1').removeAttr('style');
+        $('#rotation2').removeAttr('style');
+
         $('#page1 > div').removeAttr('style');
-        $('#r3').removeAttr('style');
+        $('#page2 > div').removeAttr('style');
         $('#page3 > div').removeAttr('style');
-        $('#s3').removeAttr('style');
-        $('#spine3').removeAttr('style');
-        $('#s4').removeAttr('style');
-        $('#s2').removeAttr('style');
+
+        $('#cornerToSpine1').removeAttr('style');
+        $('#cornerToSpine2').removeAttr('style');
 
         $('#page-flip').data('open','false');
 
@@ -259,33 +250,35 @@
 <body> 
 	<div id="card"> 
 		<div id="page-flip"> 
-			<div id="r1">
+			<div id="rotation1">
         <div id="page1">
           <div>
             <div>page1</div>
           </div>
         </div>
       </div> 
-			<div id="page2">
-        <div><!--page2--></div>
+			<div id="page3">
+        <div>page3</div>
       </div> 
-			<div id="r3">
-        <div id="page3">
+			<div id="rotation2">
+        <div id="page2">
           <div>
-            <div><!--page3--></div>
+            <div></div>
           </div>
         </div>
       </div> 
-			<div class="s">
-        <div id="s3">
-          <div id="spine3"></div>
+			<div class="cornerToSpine">
+        <div id="cornerToSpine1">
+          <div id="cornerToSpine2"></div>
         </div>
       </div> 
+<!--
 			<div class="s" id="s4">
         <div id="s2">
           <div id="spine2"></div>
         </div>
       </div> 
+-->
 		</div> 
 	</div> 
 </body> 
