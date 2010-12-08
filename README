@@ -4,13 +4,17 @@ By Peter O'Shaughnessy
 
 ---
 
-This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic, but I may as well use GAE as it's easy and free!
+This is in the early stages of development at the moment (but I hope to have it finished in time for Christmas!).
 
-To run:
+This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic (but I may as well use GAE as it's easy and free.)
+
+Simply view the index.html in your browser, or...
+
+To run up GAE:
 
   dev_appserver.py christmascard2010/
 
-To deploy:
+To deploy to GAE:
 
   appcfg.py update christmascard2010/
 

@@ -7,6 +7,6 @@ handlers:
  - url: /js
    static_dir: js
  - url: /.*
-   script: helloworld.py
+   script: showcard.py
 
 

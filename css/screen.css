@@ -1,7 +1,7 @@
 html {height:100%;}
 
 body {
-    background-color: #5DB839;
+    background-color: #406B2E;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5CD12E), to(#406B2E));
     /*background: -moz-linear-gradient(100% 100% 90deg, #EA432D, #5DB839);*/
     margin:0;
@@ -12,15 +12,12 @@ body {
 a {color:#234B7B;}
 p,h1,h2,h3,h4,h5,h6,h7,div {margin:0; padding:0;}
 
-#card {height:760px; width:100%; margin: -420px 0 0; position:absolute; top:50%;}
-
 section {
-    width:530px; 
-    height:760px;
+    width:532px; 
+    height:700px;
     background-color:#fff;
     background: -webkit-gradient(linear, 0% 0%, 5% 0%, from(#DFDFDF), to(#FFF));
     /*background: -moz-linear-gradient... */
-    display:none; 
     text-align:center; 
     color:#262626; 
     padding: 40px 20px;
@@ -28,15 +25,38 @@ section {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -400px;
 }
 
-section.current {display:block;}
-
 #frontpage {
-    margin: 0 auto; 
+    z-index: 3;
     cursor:pointer;   
-    /*-webkit-transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 2s linear;*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s ease-in;
+    -webkit-transform: rotateY(0deg);
+		-webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 0 0;
+    -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+}
+
+#firstinnerpage {
+    z-index: 2;
+    background: -webkit-gradient(linear, 0% 0%, 5% 0%, from(#DFDFDF), to(#FFF));
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s ease-out;
+    -webkit-transform: rotateY(-90deg);
+		-webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 0 0;
+    -webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+}
+
+#secondinnerpage {
+  z-index: 1;
+  
 }
 
 #frontpage h1 {font-size:4em; font-weight:bold;}

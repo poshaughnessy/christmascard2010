@@ -6,6 +6,11 @@ $(function() {
         openCard();
     });
 
+    // Probably want to use something else to close the card...
+    $('#secondinnerpage').click(function() {
+        closeCard();
+    });
+
 });
 
 function drawTree() {
@@ -32,6 +37,26 @@ function drawTree() {
 
 function openCard() {
     
-    alert('Open card');
+    $('#frontpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+        $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(-180deg)');
+        this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
+    }, false);
+
+    $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
+
+    $('#card').data('open','true');
+    
+}
+
+function closeCard() {
+
+    $('#firstinnerpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+        $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(0deg)');
+        this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
+    }, false);
+
+    $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
+
+    $('#card').data('open','false');
 
 }

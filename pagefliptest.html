@@ -16,7 +16,7 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		#page-flip
+		#page-turn
 		{
 			position: absolute;
 			padding: 10px 0 50px 485px;
@@ -28,17 +28,13 @@
 		{
 			position: absolute;
 			z-index: 2;
-			/*-webkit-transform-origin: 1315px 500px;*/
-      -webkit-transform-origin: 1231px 789px;
-			/*-webkit-transform: translate(-1030px, -500px) rotate(-32deg);*/
-      /*-webkit-transform: translate(-700px, -500px) rotate(-32deg);*/
-      -webkit-transform: translate(-700px, -500px) rotate(-40deg);
+      -webkit-transform-origin: 1315px 500px;
+      -webkit-transform: translate(-1030px, -500px) rotate(-32deg);
 			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
 			-webkit-transition-duration: 1s;
 		}
 		#page1
 		{
-			/*width: 1305px;*/
       width: 1342px;
 			height: 1388px;
 			overflow: hidden;
@@ -46,12 +42,8 @@
  
 		#page1 > div
 		{
-			/*-webkit-transform-origin: 285px 0;*/
-      /*-webkit-transform-origin: 396px -194px;*/
-      -webkit-transform-origin: 360px -184px;
-			/*-webkit-transform: translate(1030px, 500px) rotate(32deg);*/
-      /*-webkit-transform: translate(976px, 500px) rotate(32deg);*/
-      -webkit-transform: translate(1045px, 500px) rotate(40deg);
+      -webkit-transform-origin: 285px 0;
+      -webkit-transform: translate(1030px, 500px) rotate(32deg);
 			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
 			-webkit-transition-duration: 1s;
 			width: 475px;
@@ -76,11 +68,8 @@
 		}
 		#rotation2
 		{
-			-webkit-transform-origin: 1315px 500px;
-			/*-webkit-transform: translate(-1030px, -500px) rotate(-32deg);*/
-      /*-webkit-transform: translate(-854px, -511px) rotate(-45deg);*/
-      /*-webkit-transform: translate(-842px, -500px) rotate(-33deg);*/
-      -webkit-transform: translate(-842px, -500px) rotate(-40deg);
+			-webkit-transform-origin: 1413px 174px;
+      -webkit-transform: translate(-1030px, -500px) rotate(-32deg);
 			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
 			-webkit-transition-duration: 1s;
 			position: absolute;
@@ -89,10 +78,8 @@
  
 		#cornerToSpine1
 		{
-			-webkit-transform-origin: 70px 500px;
-			/*-webkit-transform: translate(215px, -500px) rotate(-32deg) translate(40px, 0);*/
-      /*-webkit-transform: translate(405px, -500px) rotate(-32deg) translate(40px, 0);*/
-      -webkit-transform: translate(405px, -500px) rotate(-40deg) translate(40px, 0);
+			-webkit-transform-origin: -305px 289px;
+      -webkit-transform: translate(202px, -500px) rotate(-32deg) translate(40px, 0);
 			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
 			-webkit-transition-duration: 1s;
 			position: absolute;
@@ -124,9 +111,7 @@
 		#page2 > div
 		{
 			-webkit-transform-origin: 0 0;
-			/*-webkit-transform: translate(1255px, 500px) rotate(-32deg);*/
-      /*-webkit-transform: translate(1258px, 501px) rotate(-32deg);*/
-      -webkit-transform: translate(1258px, 501px) rotate(-40deg);
+      -webkit-transform: translate(1258px, 493px) rotate(-25deg);
 			-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
 			-webkit-transition-duration: 1s;
 			-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, .5);
@@ -143,57 +128,7 @@
 			background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0,0,0,.20)));
 		}
 		
-
-    /* Animation */
-    /*
-		#page-flip:hover #s4
-		{
-			opacity: 0;
-		}
-		#page-flip:hover #s2
-		{
-			-webkit-transform-origin: 300px 500px;
-			-webkit-transform: translate(-15px, -500px) rotate(0deg);
-		}
-		#page-flip:hover #s3
-		{
-			-webkit-transform-origin: 325px 500px;
-			-webkit-transform: translate(-40px, -500px) rotate(0deg) translate(40px, 0);
-		}
-		#page-flip:hover #spine3
-		{
-			width: 11px;
-		}
-		#page-flip:hover #rotation1
-		{
-      -webkit-transform-origin: 1570px 1010px;
-      -webkit-transform: translate(-1285px, -500px) rotate(0deg);
-		}
-		#page-flip:hover #page1 > div
-		{
-			-webkit-transform-origin: 285px 0;
-			-webkit-transform: translate(1285px, 500px) rotate(0deg);
-		}
-		#page-flip:hover #rotation2
-		{
-			-webkit-transform-origin: 1570px 500px;
-			-webkit-transform: translate(-1285px, -500px) rotate(0deg);
-		}
-		#page-flip:hover #page2 > div
-		{
-			-webkit-transform-origin: 0 0;
-      -webkit-transform: translate(810px, 500px) rotate(0deg);
-		}
-    */
-
-    #page-flip {cursor:pointer;}
-
-		@-webkit-keyframes page2Animation {
-
-		  50% {translate(1000px, 600px) rotate(20deg);}
-		  100% {translate(810px, 500px) rotate(0deg);}
-
-		}
+    #page-turn {cursor:pointer;}
 
 	</style> 
   <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
@@ -201,20 +136,21 @@
 
     function openCard() {
 
-        $('#rotation1').css('-webkit-transform-origin', '1570px 1010px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
+        $('#rotation1').css('-webkit-transform-origin', '1570px 500px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
+        
         $('#rotation2').css('-webkit-transform-origin', '1570px 500px').css('-webkit-transform', 'translate(-1285px, -500px) rotate(0deg)');
 
         $('#page1 > div').css('-webkit-transform-origin', '285px 0').css('-webkit-transform','translate(1285px, 500px) rotate(0deg)');
-        $('#page2 > div').css('-webkit-transform-origin', '0 0').css('-webkit-transform', 'translate(810px, 500px) rotate(0deg)');
+        
+        $('#page2 > div').css('-webkit-transform-origin', '0 0').css('-webkit-transform', 'translate(830px, 500px) rotate(0deg)');
 
-        /* css('-webkit-animation', 'page2Animation 1s infinite'); */
+        /*window.setTimeout(function() {$('#page3 > div').css('z-index','2');}, 500);*/
 
-        window.setTimeout(function() {$('#page3 > div').css('z-index','2');}, 500);
+        $('#cornerToSpine1').css('-webkit-transform-origin', '300px 500px').css('-webkit-transform', 'translate(-15px, -500px) rotate(0deg)');
 
-        $('#cornerToSpine1').css('-webkit-transform-origin', '325px 500px').css('-webkit-transform', 'translate(-40px, -500px) rotate(0deg) translate(40px, 0)');
         $('#cornerToSpine2').css('width', '11px');
 
-        $('#page-flip').data('open','true');
+        $('#page-turn').data('open','true');
 
     }
 
@@ -230,14 +166,14 @@
         $('#cornerToSpine1').removeAttr('style');
         $('#cornerToSpine2').removeAttr('style');
 
-        $('#page-flip').data('open','false');
+        $('#page-turn').data('open','false');
 
     }
 
     $(function() {
-      $('#page-flip').click(function() {
+      $('#page-turn').click(function() {
 
-        if( $('#page-flip').data('open') !== 'true' ) {
+        if( $('#page-turn').data('open') !== 'true' ) {
           openCard();
         } else {
           closeCard();
@@ -249,16 +185,16 @@
 </head> 
 <body> 
 	<div id="card"> 
-		<div id="page-flip"> 
+		<div id="page-turn"> 
 			<div id="rotation1">
         <div id="page1">
           <div>
-            <div>page1</div>
+            <div></div>
           </div>
         </div>
       </div> 
 			<div id="page3">
-        <div>page3</div>
+        <div></div>
       </div> 
 			<div id="rotation2">
         <div id="page2">
