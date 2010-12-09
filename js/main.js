@@ -36,11 +36,17 @@ function drawTree() {
 }
 
 function openCard() {
-    
+  
     $('#frontpage')[0].addEventListener('webkitTransitionEnd', function(event) {
         $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(-180deg)');
         this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
     }, false);
+
+/*
+    window.setTimeout(function() {
+	$('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(-180deg)');
+	}, 1000);
+*/
 
     $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
 
@@ -54,6 +60,12 @@ function closeCard() {
         $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(0deg)');
         this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
     }, false);
+
+/*
+    window.setTimeout(function() {
+	$('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(0deg)');
+	}, 1000);
+*/
 
     $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
 
