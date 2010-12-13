@@ -25,7 +25,7 @@
 	      <canvas id="tree" width="300" height="300"></canvas>
 
         <ul class="instructions">
-	        <li>Best in Chrome or Safari on a desktop, or on an iPad</li>
+	        <li>Best in Chrome or Safari on desktop, iPhone or iPad</li>
 	      
 	        <li>Please open by clicking, swiping, or pressing <span class="arrow">→</span></li>
         </ul>
@@ -37,21 +37,28 @@
       
       <section id="secondinnerpage">
 	      
-	      <p>Dear Telegraph colleagues,</p>
+	      <p class="deartelegraph">Dear Telegraph colleagues,</p>
 	      
-	      <h3>Wishing you a very merry Christmas and a joyful New Year</h3>
+	      <h3>Wishing you a very merry Christmas<br/>
+          and a joyful New Year</h3>
 	      
-        <!-- Another canvas? -->
-	      
-	      <!-- TODO music and controls -->
+        <div class="audiocontrols">
+          <audio id="song" src="media/SilentNight_001.mp3" autobuffer="autobuffer"></audio>
+          <a href="#" id="pause">||</a>
+          <a href="#" id="play" class="disabled">&gt;</a>
+          <div class="label">Music controls</div>
+        </div>
 	      
 	      <p>From <span class="signature">Peter O'Shaughnessy</span></p>
 	      
+        <!--
 	      <footer>
+          <p>Icons from <a href="http://dryicons.com">dryicons.com</a></p>
 	        <p>Brought to you using pure HTML5, CSS3 and JavaScript.</p>
 	        <p>No images were used in the creation of this card (not even The Telegraph logo).</p>
 	        <p>This card uses offline caching, so you can come back to it later even with no Internet connection.</p>
 	      </footer>
+        -->
 	      
       </section>
 
