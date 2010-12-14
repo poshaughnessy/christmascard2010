@@ -24,6 +24,7 @@ To deploy to GAE:
 
 STILL TO DO
 
+ - Fix bug whereby if you go left/right too fast it goes weird
  - Offline capability
  - Fix for Firefox
  - Animation on inner page?
