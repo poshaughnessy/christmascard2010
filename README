@@ -4,6 +4,8 @@ By Peter O'Shaughnessy
 
 ---
 
+INSTRUCTIONS
+
 This is in the early stages of development at the moment (but I hope to have it finished in time for Christmas!).
 
 This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic (but I may as well use GAE as it's easy and free.)
@@ -18,6 +20,14 @@ To deploy to GAE:
 
   appcfg.py update christmascard2010/
 
+--
+
+STILL TO DO
+
+ - Offline capability
+ - Fix for Firefox
+ - Animation on inner page?
+ - Refactoring, tidying...
 
 --
 

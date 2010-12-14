@@ -30,7 +30,12 @@ section {
     position: absolute;
     top: 15px;
     right: 0px;
-    margin-right: 210px;
+    margin-right: 230px;
+}
+
+/* iPhone, iPad */
+@media (max-device-width: 1024px) {
+  section{ margin-right: 30px;}
 }
 
 #frontpage {

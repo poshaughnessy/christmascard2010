@@ -6,8 +6,16 @@ $(function() {
         playMusic();
         event.preventDefault();
     });
+    $('#play').bind('touchstart',function(event) {
+        playMusic();
+        event.preventDefault();
+    });
 
     $('#pause').click(function(event) {
+        pauseMusic();
+        event.preventDefault();
+    });
+    $('#pause').bind('touchstart',function(event) {
         pauseMusic();
         event.preventDefault();
     });
@@ -24,7 +32,75 @@ $(function() {
 
     document.addEventListener('keydown', function(e) { keyHandle(e); }, false);
 
+    addSwipeListener($('body')[0], function(e) {doSwipe(e);});
+
 });
+
+function doSwipe(e) {
+    if( e.direction == 'left' ) {
+        openCard();
+    } else if( e.direction == 'right' ) {
+        closeCard();
+    }
+}
+
+function addSwipeListener(el, listener) {
+
+    var startX;
+    var startY;
+    var dx;
+    var direction;
+
+    function cancelTouch() {
+        el.removeEventListener('touchmove', onTouchMove);
+        el.removeEventListener('touchend', onTouchEnd);
+        startX = null;
+        startY = null;
+        direction = null;
+    }
+    
+    function onTouchMove(e) {
+        if( e.touches.length > 1 ) {
+            cancelTouch();
+        } else {
+            dx = e.touches[0].pageX - startX;
+            var dy = e.touches[0].pageY - startY;
+            if( direction == null ) {
+                direction = dx;
+            } else if( (direction < 0 && dx > 0) || (direction > 0 && dx < 0) || Math.abs(dy) > 44) {
+                cancelTouch();
+            }
+        }
+    }
+
+    function onTouchEnd(e) {
+    
+        cancelTouch();
+
+        if( Math.abs(dx) > 50 ) {
+            listener( {target:el, direction: dx > 0 ? 'right' : 'left'} );
+            dx = 0;
+        }
+
+    }
+
+    function onTouchStart(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if( e.touches.length == 1 ) {
+            startX = e.touches[0].pageX;
+            startY = e.touches[0].pageY;
+            el.addEventListener('touchmove', onTouchMove, false);
+            el.addEventListener('touchend', onTouchEnd, false);
+        }
+        
+    }
+
+    el.addEventListener('touchstart', onTouchStart, false);
+
+}
 
 function keyHandle(e) {
 
