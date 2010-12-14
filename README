@@ -25,12 +25,14 @@ To deploy to GAE:
 STILL TO DO
 
  - Fix bug whereby if you go left/right too fast it goes weird
+ - Fix swiping on iPhone - only seems to work one in three or so
  - Offline capability - manifest file
  - Do the quick-win styling fixes for Firefox (prob won't be able to get page flipping though)
  - Use the real Telegraph font for 'The Telegraph'? (Maybe copyright issues?)
  - Something extra on inner page - an animation?
+ - Set initial music volume to be lower? Add volume control?
+ - Switch enabled buttons when the music stops
  - Refactoring, tidying...
- - What happens when the music stops...?
 
 --
 
