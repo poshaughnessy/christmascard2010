@@ -24,10 +24,23 @@ $(function() {
         openCard();
         event.preventDefault();
     });
+    $('#frontpage').bind('touchstart',function(event) {
+	openCard();
+	event.preventDefault();
+    });
 
     $('#firstinnerpage').click(function(event) {
         closeCard();
         event.preventDefault();
+    });
+    $('#firstinnerpage').bind('touchstart',function(event) {
+	closeCard();
+	event.preventDefault();
+    });
+
+    $('#song').bind('onended',function(event) {
+	alert('Song ended');
+	onMusicEnded();
     });
 
     document.addEventListener('keydown', function(e) { keyHandle(e); }, false);
@@ -182,20 +195,32 @@ function pauseMusic() {
     $('#pause').addClass('disabled');
 }
 
+function onMusicEnded() {
+    $('#play').removeClass('disabled');
+    $('#pause').addClass('disabled');
+}
+
 function openCard() {
   
     if( $('#card').data('open') === 'true' ) return;
 
     $('#frontpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+	// Animation half way there, now need to animate the second half
         $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(-180deg)');
         this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
     }, false);
 
+    $('#firstinnerpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+	// Animation complete
+	$('#card').data('open','true');	
+	playMusic();
+	this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
+    }, false);
+
     $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
 
-    $('#card').data('open','true');
-
-    playMusic();
+    // Experiment to see if I can get something working on Firefox
+    $('#frontpage').css('-moz-transform','translateY(-180deg)');
     
 }
 
@@ -204,13 +229,17 @@ function closeCard() {
     if( $('#card').data('open') !== 'true' ) return;
 
     $('#firstinnerpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+	// Animation half way there, now need to animate the second half
         $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-out').css('-webkit-transform', 'rotateY(0deg)');
         this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
     }, false);
 
-    $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
+    $('#frontpage')[0].addEventListener('webkitTransitionEnd', function(event) {
+	// Animation complete
+	$('#card').data('open','false');
+    }, false);
 
-    $('#card').data('open','false');
+    $('#firstinnerpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
 
     pauseMusic();
 

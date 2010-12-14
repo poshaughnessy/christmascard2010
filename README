@@ -1,4 +1,5 @@
 Christmas Card for my Telegraph colleagues 2010
+Hosted at: www.merrychristmasfrompeter.co.uk
 
 By Peter O'Shaughnessy
 
@@ -14,30 +15,52 @@ Simply view the index.html in your browser, or...
 
 To run up GAE:
 
-  dev_appserver.py christmascard2010/
+  dev_appserver.py .
 
 To deploy to GAE:
 
-  appcfg.py update christmascard2010/
+  appcfg.py update .
+
+--
+
+FEATURES
+
+ - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions) - works on many devices (e.g. iPad)
+ - Optimised for touch-based devices (tap & swiping)
+ - Offline caching
+ - Google Font API (Tangerine font)
+ - No images used, anywhere (to reduce bandwidth)
 
 --
 
 STILL TO DO
 
- - Fix bug whereby if you go left/right too fast it goes weird
+ Must haves:
+ - Offline capability - manifest file - STARTED, NEED TO TEST
+ - Fix so whole height is shown on iPhone in landscape orientation - STARTED
+ - Do the quick-win styling fixes for Firefox (prob won't be able to get page flipping though) - STARTED
+ - Switch enabled buttons when the music stops - STARTED
  - Fix swiping on iPhone - only seems to work one in three or so
- - Offline capability - manifest file
- - Do the quick-win styling fixes for Firefox (prob won't be able to get page flipping though)
+ - Change the music to something decent
+
+ Should haves:
+ - Set initial music volume to be lower? Add volume control?
+ - Refactoring, tidying...
+
+ Nice to haves:
  - Use the real Telegraph font for 'The Telegraph'? (Maybe copyright issues?)
  - Something extra on inner page - an animation?
- - Set initial music volume to be lower? Add volume control?
- - Switch enabled buttons when the music stops
- - Refactoring, tidying...
 
 --
 
 CREDITS
 
+'Jingle Bells - Instrumental, Ringtone, Loop Jazzy' by Royalty Free Music
+From the album: 'Instrumental Christmas Music, On Hold Loops, Ringtones, Comedy Ringtone'
+Obtained from Amazon
+http://www.amazon.co.uk/gp/product/B004ATZEKS/
+
+(Old)
 'Silent Night' by Becca Warthen, Marvin Goldstein
 Obtained from 'Free Christmas Songs/Music'
 http://www.allaboutmormons.com/free_christmas_music_mp3_songs_carols.php
