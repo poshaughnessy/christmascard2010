@@ -3,6 +3,9 @@ version: 1
 runtime: python
 api_version: 1
 
+# TEMP - DURING DEVELOPMENT ONLY!
+default_expiration: "15s"
+
 handlers:
  - url: /js
    static_dir: js
@@ -11,11 +14,19 @@ handlers:
  - url: /media
    static_dir: media
  - url: /cache.manifest
-   static_files: cache.manifest
    mime_type: text/cache-manifest
-   upload: static/cache.manifest
+   static_files: cache.manifest
+   upload: cache.manifest
  - url: /static
    static_dir: static
+ - url: /images
+   static_dir: images
+ - url: /fonts/Tangerine_Regular.ttf
+   mime_type: font/ttf
+   static_files: fonts/Tangerine_Regular.ttf
+   upload: fonts/Tangerine_Regular.ttf
+ - url: /fonts
+   static_dir: fonts
  - url: /.*
    script: showcard.py
 

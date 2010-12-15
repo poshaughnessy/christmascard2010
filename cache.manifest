@@ -1,6 +1,10 @@
 CACHE MANIFEST
+# revision 6
 css/screen.css
 js/jquery-1.4.4.min.js
 js/main.js
+js/Snow.js
+js/Three.js
 media/Jingle_Bells_Jazzy.mp3
-
+fonts/Tangerine_Regular.ttf
+images/ParticleSmoke.png

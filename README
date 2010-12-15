@@ -7,7 +7,7 @@ By Peter O'Shaughnessy
 
 INSTRUCTIONS
 
-This is in the early stages of development at the moment (but I hope to have it finished in time for Christmas!).
+This is still in development at the moment (but I hope to have it finished in time for Christmas!).
 
 This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic (but I may as well use GAE as it's easy and free.)
 
@@ -25,35 +25,38 @@ To deploy to GAE:
 
 FEATURES
 
- - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions) - works on many devices (e.g. iPad)
+ - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions, fonts) - works on many devices (e.g. iPad)
  - Optimised for touch-based devices (tap & swiping)
  - Offline caching
- - Google Font API (Tangerine font)
- - No images used, anywhere (to reduce bandwidth)
+ - No images used, anywhere (except for one tiny exception - the snowflake)
 
 --
 
 STILL TO DO
 
  Must haves:
- - Offline capability - manifest file - STARTED, NEED TO TEST
- - Fix so whole height is shown on iPhone in landscape orientation - STARTED
- - Do the quick-win styling fixes for Firefox (prob won't be able to get page flipping though) - STARTED
- - Switch enabled buttons when the music stops - STARTED
- - Fix swiping on iPhone - only seems to work one in three or so
- - Change the music to something decent
+ - Check whether font will cause a prompt each time (try on another computer)
+ - Fix centering horizontally
 
  Should haves:
+ - Fix swiping on iPhone - only seems to work one in three or so (not so much of an issue since adding tap support)
+ - Fix so whole height is shown on iPhone in landscape orientation - or allow pinch to zoom out and stop it making the whole thing go crazy...
  - Set initial music volume to be lower? Add volume control?
+ - Change the music to something better?
  - Refactoring, tidying...
 
  Nice to haves:
- - Use the real Telegraph font for 'The Telegraph'? (Maybe copyright issues?)
- - Something extra on inner page - an animation?
+ - Use the real Telegraph font for 'The Telegraph'?
+ - Something extra on inner page - an animation? Swinging bell?
+ - Support more browsers, e.g. Firefox 4 (but there's no 3D transform support yet)
 
 --
 
 CREDITS
+
+Snowflake effect (on desktop version)
+Used code kindly provided to the world by Seb Lee-Delisle and mr. doob
+See: http://sebleedelisle.com/2010/11/javascript-html5-canvas-snow-in-3d/
 
 'Jingle Bells - Instrumental, Ringtone, Loop Jazzy' by Royalty Free Music
 From the album: 'Instrumental Christmas Music, On Hold Loops, Ringtones, Comedy Ringtone'

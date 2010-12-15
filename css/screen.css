@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tangerine'), url('../fonts/Tangerine_Regular.ttf') format('truetype');
+}
+
 html {height:100%;}
 
 body {
@@ -14,12 +21,20 @@ body {
 a {color:#234B7B;}
 p,h1,h2,h3,h4,h5,h6,h7,div {margin:0; padding:0;}
 
+#card {
+    width: 920px;
+    height: 630px;
+    margin: 0 auto;
+    position: relative;
+    top: 15px;
+}
+
 section {
     width:420px; 
     height:550px;
     background-color:#fff;
     background: -webkit-gradient(linear, 0% 0%, 5% 0%, from(#DFDFDF), to(#FFF));
-    background: -moz-linear-gradient(0deg, #DFDFDF 5%, #FFF 100%);
+    background: -moz-linear-gradient(left, #DFDFDF, #FFF 5%, #FFF);
     text-align:center; 
     color:#262626; 
     padding: 40px 20px;
@@ -28,9 +43,8 @@ section {
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
     position: absolute;
-    top: 15px;
+    top: 0px;
     right: 0px;
-    margin-right: 230px;
 }
 
 /* iPhone, iPad */
@@ -131,7 +145,7 @@ section {
 
 #frontpage h1 {font-size:4em; font-weight:bold;}
 
-.logointro {font-family:'Tangerine',serif; font-size:3em; font-weight:bold; margin-top:10px;}
+.logointro {font-family:'Tangerine',serif; font-size:3em; margin-top:10px;}
 .instructions {font-size: 1.2em; font-family:georgia,'times new roman',serif; text-align:left; padding-left:50px;}
 .instructions li {margin-top:20px;}
 .instructions .arrow {font-family:helvetica; font-weight:bold;}

@@ -47,6 +47,11 @@ $(function() {
 
     addSwipeListener($('body')[0], function(e) {doSwipe(e);});
 
+    // Enable snow on desktop, but it's too slow for iPhone/iPad
+    if( screen.width > 1024 ) {
+        renderSnow();
+    }
+
 });
 
 function doSwipe(e) {
@@ -213,14 +218,15 @@ function openCard() {
     $('#firstinnerpage')[0].addEventListener('webkitTransitionEnd', function(event) {
 	// Animation complete
 	$('#card').data('open','true');	
-	playMusic();
 	this.removeEventListener('webkitTransitionEnd', arguments.callee, false);
     }, false);
 
     $('#frontpage').css('-webkit-transition','-webkit-transform 1s ease-in').css('-webkit-transform', 'rotateY(-90deg)');
 
+	  playMusic();
+
     // Experiment to see if I can get something working on Firefox
-    $('#frontpage').css('-moz-transform','translateY(-180deg)');
+    //$('#frontpage').css('-moz-transform','translateY(-180deg)');
     
 }
 
@@ -244,3 +250,101 @@ function closeCard() {
     pauseMusic();
 
 }
+
+/* Lifted from JavaScript PixelPounding demos from github.com/sebleedelisle */
+function renderSnow() {
+
+    var SCREEN_WIDTH = window.innerWidth;
+		var SCREEN_HEIGHT = window.innerHeight;
+
+		var container;
+    
+		var particle;
+    
+		var camera;
+		var scene;
+		var renderer;
+    
+		var mouseX = 0;
+		var mouseY = 0;
+    
+		var windowHalfX = window.innerWidth / 2;
+		var windowHalfY = window.innerHeight / 2;
+		
+		var particles = []; 
+		var particleImage = new Image();
+		particleImage.src = 'images/ParticleSmoke.png'; 
+    
+		init();
+		setInterval( loop, 1000 / 60 );
+    
+		function init() {
+        
+				container = document.createElement('div');
+
+        // Added by Peter
+        container.style.position = 'absolute';
+        container.style.top = '0';
+        container.style.left = '0';
+
+				document.body.appendChild(container);
+        
+				camera = new THREE.Camera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+				camera.position.z = 1000;
+        
+				scene = new THREE.Scene();
+        
+				renderer = new THREE.CanvasRenderer();
+				renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        
+				for (var i = 0; i < 100; i++) {
+            
+					  particle = new Particle3D( new THREE.ParticleBitmapMaterial( particleImage));
+					  particle.position.x = Math.random() * 2000 - 1000;
+					  particle.position.y = Math.random() * 2000 - 1000;
+					  particle.position.z = Math.random() * 2000 - 1000;
+					  particle.scale.x = particle.scale.y =  1;
+					  scene.addObject( particle );
+					  
+					  particles.push(particle); 
+				}
+        
+        // Added by Peter
+        renderer.domElement.style.position = 'absolute';
+
+				container.appendChild( renderer.domElement );
+	      
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+		}
+    
+		function onDocumentMouseMove( event ) {
+
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+		}
+    
+		function loop() {
+        
+				for(var i = 0; i<particles.length; i++) {
+				    
+					  var particle = particles[i]; 
+					  particle.update(); 
+					  
+					  with(particle.position) {
+						    if(y<-1000) y+=2000; 
+						    if(x>1000) x-=2000; 
+						    else if(x<-1000) x+=2000; 
+						    if(z>1000) z-=2000; 
+						    else if(z<-1000) z+=2000; 
+					  }				
+				}
+        
+				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+        
+				renderer.render( scene, camera );
+        
+		}
+    
+}
+    
