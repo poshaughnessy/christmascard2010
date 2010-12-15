@@ -5,11 +5,24 @@ By Peter O'Shaughnessy
 
 ---
 
+COMPATIBILITY
+
+This card has been built for WEBKIT browsers
+
+ - Google Chrome - fully working
+ - Safari - fully working
+ - iPad 4.2 - fully working (but no snowflakes as it's too slow at animating them)
+ - iPhone 4.2 - fully working (but no snowflakes and you can't see the whole card in landscape orientation)
+ - iPad/iPhone pre-4.2 - no Tangerine font (currently TTF only)
+ - Firefox 3.6 - displays initial view OK, but card won't open (no 3D CSS transition support)
+
+--
+
 INSTRUCTIONS
 
 This is still in development at the moment (but I hope to have it finished in time for Christmas!).
 
-This is a Google App Engine (Python) project. It's really just HTML - nothing dynamic (but I may as well use GAE as it's easy and free.)
+This is a Google App Engine (Python) project. It's actually all client-side - nothing requires any server-side code (but I may as well use GAE as it's easy and free.)
 
 Simply view the index.html in your browser, or...
 
@@ -26,9 +39,9 @@ To deploy to GAE:
 FEATURES
 
  - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions, fonts) - works on many devices (e.g. iPad)
- - Optimised for touch-based devices (tap & swiping)
+ - Optimised for touch devices (tap & swiping)
  - Offline caching
- - No images used, anywhere (except for one tiny exception - the snowflake)
+ - No images used, anywhere (oh ok, except for one tiny exception - the snowflake PNG)
 
 --
 
