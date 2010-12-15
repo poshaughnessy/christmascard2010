@@ -47,11 +47,6 @@ section {
     right: 0px;
 }
 
-/* iPhone, iPad */
-@media (max-device-width: 1024px) {
-  section{ margin-right: 30px;}
-}
-
 #frontpage {
     z-index: 3;
     cursor:pointer;   

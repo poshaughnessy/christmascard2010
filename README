@@ -35,10 +35,11 @@ FEATURES
 STILL TO DO
 
  Must haves:
+ - REMOVE DEFAULT_EXPIRATION FROM app.yaml
  - Check whether font will cause a prompt each time (try on another computer)
- - Fix centering horizontally
 
  Should haves:
+ - Fix Tangerine font for iPhone/iPad pre 4.2 - create an SVG version? Or go back to using Google Font API and forget that font working offline?
  - Fix swiping on iPhone - only seems to work one in three or so (not so much of an issue since adding tap support)
  - Fix so whole height is shown on iPhone in landscape orientation - or allow pinch to zoom out and stop it making the whole thing go crazy...
  - Set initial music volume to be lower? Add volume control?
