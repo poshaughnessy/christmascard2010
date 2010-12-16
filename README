@@ -11,9 +11,9 @@ This card has been built for WEBKIT browsers
 
  - Google Chrome - fully working
  - Safari - fully working
- - iPad 4.2 - fully working (but no snowflakes as it's too slow at animating them)
+ - iPad 4.2 - fully working (but no snowflakes as it's too slow at animating them so I disabled it)
  - iPhone 4.2 - fully working (but no snowflakes and you can't see the whole card in landscape orientation)
- - iPad/iPhone pre-4.2 - no Tangerine font (currently TTF only)
+ - iPad/iPhone pre-4.2 - no Tangerine font (doesn't support TTF fonts)
  - Firefox 3.6 - displays initial view OK, but card won't open (no 3D CSS transition support)
 
 --
@@ -40,8 +40,9 @@ FEATURES
 
  - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions, fonts) - works on many devices (e.g. iPad)
  - Optimised for touch devices (tap & swiping)
- - Offline caching
- - No images used, anywhere (oh ok, except for one tiny exception - the snowflake PNG)
+ - 'Web app capable' - add to home screen on iPhone/iPad for full-screen view
+ - HTML5 offline caching - works offline
+ - No images used, anywhere (oh ok, except for two tiny exceptions - the snowflake PNG, and the iOS home screen icon)
 
 --
 
@@ -49,18 +50,18 @@ STILL TO DO
 
  Must haves:
  - REMOVE DEFAULT_EXPIRATION FROM app.yaml
- - Check whether font will cause a prompt each time (try on another computer)
+ - PUT BACK CACHE.MANIFEST DECLARATION in index.html
 
  Should haves:
- - Fix Tangerine font for iPhone/iPad pre 4.2 - create an SVG version? Or go back to using Google Font API and forget that font working offline?
+ - Use the real Telegraph font for 'The Telegraph'? Or try a better font, at least?
+ - Fix Tangerine font for iPhone/iPad pre 4.2 - I thought the SVG version should work? Or I could go back to using Google Font API and forget about that font working offline?
  - Fix swiping on iPhone - only seems to work one in three or so (not so much of an issue since adding tap support)
  - Fix so whole height is shown on iPhone in landscape orientation - or allow pinch to zoom out and stop it making the whole thing go crazy...
- - Set initial music volume to be lower? Add volume control?
  - Change the music to something better?
  - Refactoring, tidying...
 
  Nice to haves:
- - Use the real Telegraph font for 'The Telegraph'?
+ - Set initial music volume to be lower? Add volume control?
  - Something extra on inner page - an animation? Swinging bell?
  - Support more browsers, e.g. Firefox 4 (but there's no 3D transform support yet)
 

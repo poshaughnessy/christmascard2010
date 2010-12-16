@@ -1,10 +1,15 @@
 CACHE MANIFEST
-# revision 9
+# Revision 14
+# NB. The only way I have found to get this to update in Chrome is to check
+# 'Clear cookies and other site data when I quit my browser' in the Content Settings popup and quit it.
 css/screen.css
+fonts/tangerine_regular-webfont.svg
+fonts/tangerine_regular-webfont.ttf
+fonts/tangerine_regular-webfont.woff
+images/ios-home-icon.png
+images/ParticleSmoke.png
 js/jquery-1.4.4.min.js
 js/main.js
 js/Snow.js
 js/Three.js
 media/Jingle_Bells_Jazzy.mp3
-fonts/Tangerine_Regular.ttf
-images/ParticleSmoke.png
