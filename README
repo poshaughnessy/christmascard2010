@@ -20,9 +20,7 @@ This card has been built for WEBKIT browsers
 
 INSTRUCTIONS
 
-This is still in development at the moment (but I hope to have it finished in time for Christmas!).
-
-This is a Google App Engine (Python) project. It's actually all client-side - nothing requires any server-side code (but I may as well use GAE as it's easy and free.)
+This is a Google App Engine (Python) project. It's actually all client-side - nothing requires any server-side code (but I figured I may as well use GAE as it's a great service, easy to use, and free for my level of usage.)
 
 Simply view the index.html in your browser, or...
 
@@ -78,7 +76,7 @@ From the album: 'Instrumental Christmas Music, On Hold Loops, Ringtones, Comedy 
 Obtained from Amazon
 http://www.amazon.co.uk/gp/product/B004ATZEKS/
 
-(Old)
+(Old - not used anymore)
 'Silent Night' by Becca Warthen, Marvin Goldstein
 Obtained from 'Free Christmas Songs/Music'
 http://www.allaboutmormons.com/free_christmas_music_mp3_songs_carols.php
