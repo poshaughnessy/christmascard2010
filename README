@@ -46,10 +46,6 @@ FEATURES
 
 STILL TO DO
 
- Must haves:
- - REMOVE DEFAULT_EXPIRATION FROM app.yaml
- - PUT BACK CACHE.MANIFEST DECLARATION in index.html
-
  Should haves:
  - Use the real Telegraph font for 'The Telegraph'? Or try a better font, at least?
  - Fix Tangerine font for iPhone/iPad pre 4.2 - I thought the SVG version should work? Or I could go back to using Google Font API and forget about that font working offline?
