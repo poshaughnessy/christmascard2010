@@ -18,22 +18,6 @@ This card has been built for WEBKIT browsers
 
 --
 
-INSTRUCTIONS
-
-This is a Google App Engine (Python) project. It's actually all client-side - nothing requires any server-side code (but I figured I may as well use GAE as it's a great service, easy to use, and free for my level of usage.)
-
-Simply view the index.html in your browser, or...
-
-To run up GAE:
-
-  dev_appserver.py .
-
-To deploy to GAE:
-
-  appcfg.py update .
-
---
-
 FEATURES
 
  - Open web standards (HTML5 <canvas> & <audio>, CSS3 transitions, fonts) - works on many devices (e.g. iPad)
